@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Test</title>
+</head>
+<body>
+    <h1>Blog Data Test</h1>
+    <div id="test-output"></div>
+    
+    <script>
+        // Test the blog data initialization
+        const testOutput = document.getElementById('test-output');
+        
+        function logTest(message) {
+            const p = document.createElement('p');
+            p.textContent = message;
+            testOutput.appendChild(p);
+            console.log(message);
+        }
+
+        // Check localStorage before loading blog-data
+        logTest('1. Initial localStorage check:');
+        const initialData = localStorage.getItem('festiveBlogs');
+        logTest(`   Data exists: ${!!initialData}`);
+        if (initialData) {
+            logTest(`   Articles count: ${JSON.parse(initialData).length}`);
+        }
+    </script>
+
+    <script src="js/blog-data.js"></script>
+    
+    <script>
+        // Check localStorage after loading blog-data
+        logTest('2. After blog-data.js load:');
+        const afterData = localStorage.getItem('festiveBlogs');
+        logTest(`   Data exists: ${!!afterData}`);
+        if (afterData) {
+            const articles = JSON.parse(afterData);
+            logTest(`   Articles count: ${articles.length}`);
+            logTest(`   First article: ${articles[0]?.title}`);
+        }
+    </script>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>

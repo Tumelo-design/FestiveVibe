@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Resolutions - Festive Finds</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-new-year">
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Festive Finds</a></div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="new-year-planners.html">Year Planners</a></li>
+        <li class="dropdown"><a href="new-year-journals.html">Journals</a></li>
+        <li class="dropdown"><a href="new-year-vision-boards.html">Vision Boards</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero newyear-hero">
+      <h2>🎊 New Year Resolutions & Tools 🎊</h2>
+      <p>Start the year with intention: planners, journals, and vision boards. Add digital downloads or affiliate items below.</p>
+    </section>
+
+    <section class="reviews">
+      <h3>✨ New Year Resources ✨</h3>
+      <div id="product-list-new-year" class="product-list"></div>
+
+      <details class="add-product">
+        <summary>Add a New Year Product</summary>
+        <form id="add-product-form-new-year" class="add-product-form">
+          <input name="title" placeholder="Product title" required>
+          <input name="image" placeholder="Image URL (optional)">
+          <input name="url" placeholder="Affiliate / product URL (required)" required>
+          <input name="price" placeholder="Price">
+          <textarea name="desc" placeholder="Short description"></textarea>
+          <label><input type="checkbox" name="digital"> Digital Product</label>
+          <button type="submit">Add Product</button>
+        </form>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="contact"><strong>Contact:</strong> hello@example.com</div>
+      <div class="social"><a href="#">Facebook</a> <a href="#">Instagram</a></div>
+    </div>
+    <small>© <span id="year"></span> Festive Finds.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

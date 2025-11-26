@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanksgiving - Festive Finds</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-thanksgiving">
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Festive Finds</a></div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="thanksgiving-first-gifts.html">First Gifts</a></li>
+        <li class="dropdown"><a href="thanksgiving-planner.html">Planner</a></li>
+        <li class="dropdown"><a href="thanksgiving-tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero thanksgiving-hero">
+      <h2>🦃 Thanksgiving Essentials 🦃</h2>
+      <p>Find great meal tools, table décor, and planners. Add affiliate links or digital recipe packs to your reviews below.</p>
+    </section>
+
+    <section class="reviews">
+      <h3>🍂 Thanksgiving Reviews 🍂</h3>
+      <div id="product-list-thanksgiving" class="product-list"></div>
+
+      <details class="add-product">
+        <summary>Add a Thanksgiving Product</summary>
+        <form id="add-product-form-thanksgiving" class="add-product-form">
+          <input name="title" placeholder="Product title" required>
+          <input name="image" placeholder="Image URL (optional)">
+          <input name="url" placeholder="Affiliate / product URL (required)" required>
+          <input name="price" placeholder="Price">
+          <textarea name="desc" placeholder="Short description"></textarea>
+          <label><input type="checkbox" name="digital"> Digital Product</label>
+          <button type="submit">Add Product</button>
+        </form>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="contact"><strong>Contact:</strong> hello@example.com</div>
+      <div class="social"><a href="#">Facebook</a> <a href="#">Instagram</a></div>
+    </div>
+    <small>© <span id="year"></span> Festive Finds.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

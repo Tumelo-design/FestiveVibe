@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Festive Finds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Festive Finds</a></div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="christmas.html">Christmas ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="christmas-first-gifts.html">First Gifts</a></li>
+            <li><a href="christmas-planner.html">Planner</a></li>
+            <li><a href="christmas-tools.html">Tools</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="thanksgiving.html">Thanksgiving ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="thanksgiving-first-gifts.html">First Gifts</a></li>
+            <li><a href="thanksgiving-planner.html">Planner</a></li>
+            <li><a href="thanksgiving-tools.html">Tools</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="new-year.html">New Year ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="new-year-planners.html">Year Planners</a></li>
+            <li><a href="new-year-journals.html">Journals</a></li>
+            <li><a href="new-year-vision-boards.html">Vision Boards</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero blog-hero">
+      <h1>🎄 Festive Blog 🎅</h1>
+      <p>Expert advice on managing stress, finances, and time during the festive season.</p>
+    </section>
+
+    <section class="blog-controls">
+      <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All Articles</button>
+        <button class="filter-btn" data-filter="stress">Stress Management</button>
+        <button class="filter-btn" data-filter="finance">Financial Planning</button>
+        <button class="filter-btn" data-filter="time">Time Management</button>
+      </div>
+      <button class="admin-toggle" id="admin-toggle">Admin Panel</button>
+    </section>
+
+    <div id="admin-panel" class="admin-panel hidden">
+      <h2>📝 Publish New Article</h2>
+      <form id="add-blog-form" class="add-blog-form">
+        <div class="form-group">
+          <label for="title">Article Title *</label>
+          <input type="text" id="title" name="title" placeholder="Article Title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Publication Date *</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="stress">Stress Management</option>
+            <option value="finance">Financial Planning</option>
+            <option value="time">Time Management</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="excerpt">Short Excerpt (100-150 words) *</label>
+          <textarea id="excerpt" name="excerpt" placeholder="Brief summary of the article" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Full Article Content (800-1000 words) *</label>
+          <textarea id="content" name="content" placeholder="Full article content" rows="15" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author Name *</label>
+          <input type="text" id="author" name="author" placeholder="Author Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="readTime">Read Time *</label>
+          <input type="text" id="readTime" name="readTime" placeholder="e.g., 6-7 min read" required>
+        </div>
+
+        <button type="submit" class="btn-publish">Publish Article</button>
+      </form>
+      <div id="form-message" class="form-message hidden"></div>
+    </div>
+
+    <section class="blog-grid" id="blog-grid">
+      <div class="loading">Loading articles...</div>
+    </section>
+  </main>
+
+  <div id="article-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <div id="modal-meta" class="modal-meta"></div>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="contact">
+        <strong>Contact:</strong> hello@example.com
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+    </div>
+    <small>© <span id="year"></span> Festive Finds. All rights reserved.</small>
+  </footer>
+
+  <script src="js/blog-data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>

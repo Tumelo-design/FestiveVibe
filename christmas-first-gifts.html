@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas — First Gifts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-christmas-first-gifts">
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Festive Finds</a></div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="christmas.html">Christmas ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="christmas-first-gifts.html">First Gifts</a></li>
+            <li><a href="christmas-planner.html">Planner</a></li>
+            <li><a href="christmas-tools.html">Tools</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="thanksgiving.html">Thanksgiving ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="thanksgiving-first-gifts.html">First Gifts</a></li>
+            <li><a href="thanksgiving-planner.html">Planner</a></li>
+            <li><a href="thanksgiving-tools.html">Tools</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="new-year.html">New Year ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="new-year-planners.html">Year Planners</a></li>
+            <li><a href="new-year-journals.html">Journals</a></li>
+            <li><a href="new-year-vision-boards.html">Vision Boards</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero christmas-hero">
+      <h2>🎄 Christmas — First Gifts 🎁</h2>
+      <p>Top picks for first gifts and stocking stuffers. Add affiliate links or digital downloads here.</p>
+    </section>
+
+    <section class="reviews">
+      <h3>🎅 First Gifts 🎅</h3>
+      <div id="product-list-christmas-first-gifts" class="product-list"></div>
+
+      <details class="add-product">
+        <summary>Add a product</summary>
+        <form id="add-product-form-christmas-first-gifts" class="add-product-form">
+          <input name="title" placeholder="Product title" required>
+          <input name="image" placeholder="Image URL (optional)">
+          <input name="url" placeholder="Affiliate / product URL (required)" required>
+          <input name="price" placeholder="Price">
+          <textarea name="desc" placeholder="Short description"></textarea>
+          <label><input type="checkbox" name="digital"> Digital Product</label>
+          <button type="submit">Add Product</button>
+        </form>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><div class="contact">hello@example.com</div><div class="social"><a href="#">FB</a></div></div>
+    <small>© <span id="year"></span> Festive Finds.</small>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

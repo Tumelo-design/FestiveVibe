@@ -1,0 +1,123 @@
+:root{
+  --bg:#fff8f2;
+  --accent:#b33a3a; /* warm festive red */
+  --accent-2:#2a6f35; /* green */
+  --muted:#6b6b6b;
+  --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin:0;padding:0;background:var(--bg);color:#222;position:relative;overflow-x:hidden;
+}
+
+/* Christmas Lights Animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; text-shadow: 0 0 10px currentColor; }
+  50% { opacity: 0.3; text-shadow: 0 0 2px currentColor; }
+}
+@keyframes swing {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes fall {
+  to { transform: translateY(100vh) rotateZ(360deg); opacity: 0; }
+}
+
+.lights {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent);
+  z-index: 999;
+  pointer-events: none;
+}
+.light {
+  display: inline-block;
+  font-size: 2rem;
+  animation: twinkle 1.5s infinite;
+  filter: drop-shadow(0 0 8px rgba(255,223,0,0.8));
+}
+.light:nth-child(1) { animation-delay: 0s; color: #FFD700; }
+.light:nth-child(2) { animation-delay: 0.2s; color: #FF6347; }
+.light:nth-child(3) { animation-delay: 0.4s; color: #00CED1; }
+.light:nth-child(4) { animation-delay: 0.6s; color: #FFD700; }
+.light:nth-child(5) { animation-delay: 0.8s; color: #FF69B4; }
+.light:nth-child(6) { animation-delay: 1s; color: #00CED1; }
+.light:nth-child(7) { animation-delay: 1.2s; color: #FFD700; }
+.light:nth-child(8) { animation-delay: 1.4s; color: #FF6347; }
+
+.snowflake {
+  position: fixed;
+  top: -10px;
+  z-index: 0;
+  user-select: none;
+  font-size: 2rem;
+  pointer-events: none;
+  animation: fall 10s infinite linear;
+}
+
+.festive-icon {
+  display: inline-block;
+  animation: swing 2.5s ease-in-out infinite;
+}
+.festive-icon.gift { animation-delay: 0s; }
+.festive-icon.tree { animation-delay: 0.3s; }
+.festive-icon.bell { animation-delay: 0.6s; }
+.festive-icon.candy { animation-delay: 0.9s; }
+.festive-icon.snowflake { animation-delay: 1.2s; }
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:linear-gradient(90deg,var(--accent),#ff9b9b);color:#fff;margin-top:50px;border-bottom:3px dashed var(--accent-2)}
+.site-header .brand{font-weight:700;font-size:1.2rem}
+.site-header .brand a{color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px}
+.site-header .brand a::before{content:"🎄";font-size:1.5rem}
+.site-header .brand a::after{content:"✨";font-size:1.5rem;margin-left:6px}
+.nav-toggle{display:none;background:transparent;border:0;color:#fff;font-size:1.25rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+.main-nav a{color:#fff;text-decoration:none;padding:6px 8px;border-radius:6px}
+.main-nav .dropdown-menu{display:none;position:absolute;background:rgba(255,255,255,0.95);color:#000;padding:8px;border-radius:6px;margin-top:6px}
+.main-nav .dropdown-menu li a{color:var(--accent-2);font-weight:600}
+.main-nav .dropdown-menu li a:hover{background:rgba(42,111,53,0.1)}
+.main-nav li{position:relative}
+.main-nav li:hover > .dropdown-menu{display:block}
+
+.container{max-width:1100px;margin:18px auto;padding:0 16px}
+.hero{padding:28px;border-radius:10px;margin-bottom:18px;background:linear-gradient(120deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));box-shadow:0 6px 18px rgba(0,0,0,0.06);position:relative;border:2px solid rgba(179,58,58,0.2);overflow:hidden}
+.hero::before{content:"🎁 🎄 ⛄ 🎅 ❄️ 🎉";position:absolute;top:0;left:0;font-size:3rem;opacity:0.08;pointer-events:none;white-space:nowrap}
+.hero h2{position:relative;z-index:2}
+.home-hero{background-image:linear-gradient(135deg, rgba(243,233,210,0.6), rgba(255,245,238,0.6));}
+.christmas-hero{background:linear-gradient(135deg,#ffecec,#e9fff0)}
+.thanksgiving-hero{background:linear-gradient(135deg,#fff5e6,#fff1e0)}
+.newyear-hero{background:linear-gradient(135deg,#eef6ff,#f7f7ff)}
+
+.cta{display:inline-block;margin-top:10px;padding:10px 14px;background:var(--accent-2);color:#fff;border-radius:8px;text-decoration:none}
+
+.reviews h3{margin-top:0}
+.product-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06);border:2px solid rgba(42,111,53,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,0.12)}
+.card::before{content:"🎁";position:absolute;top:8px;right:8px;font-size:1.2rem;opacity:0.6}
+.card h4{color:var(--accent);margin-top:0}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.price{color:var(--accent);font-weight:700}
+.buy-btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none}
+
+.add-product{margin-top:12px}
+.add-product-form input,.add-product-form textarea{display:block;width:100%;padding:8px;margin:6px 0;border:1px solid #ddd;border-radius:6px}
+.add-product-form button{background:var(--accent-2);color:#fff;padding:8px 12px;border:0;border-radius:6px}
+
+.site-footer{background:#222;color:#fff;padding:14px}
+.site-footer .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:720px){
+  .main-nav ul{display:none;flex-direction:column;background:rgba(0,0,0,0.03);position:absolute;left:10px;top:56px;padding:10px;border-radius:8px}
+  .nav-toggle{display:inline-block}
+}
+
+/* small helpers */
+.muted{color:var(--muted)}
